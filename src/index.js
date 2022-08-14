@@ -2,9 +2,10 @@ import './css/styles.css';
 
 const DEBOUNCE_DELAY = 300;
 
-const test = fetch('https://restcountries.com/v3.1/all');
+function fetchCountries(name) {
+  return fetch(`https://restcountries.com/v3.1/name/${name}`).then(response =>
+    response.json()
+  );
+}
 
-//   .then(data => {
-//     console.log(data.common);
-//   });
-// console.log(test);
+fetchCountries('uk');
