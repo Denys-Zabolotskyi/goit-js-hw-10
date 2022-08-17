@@ -1,4 +1,3 @@
-index.js;
 //*******************Import********************** */
 import './css/styles.css';
 import debounce from 'lodash.debounce';
@@ -51,7 +50,7 @@ function markupCountriesList(countriesArr) {
         name: { official },
         flags: { svg },
       }) => `<li class="country-list__item">
-<img src="${svg}" alt="flag" width="30">
+<img src="${svg}" alt="flag" width="50">
 <h1 class="country-list__title">${official}</h1>
       </li>`
     )
@@ -69,20 +68,20 @@ function markupCountryItem(countriesArr) {
         population,
         flags: { svg },
         languages,
-      }) => `<div class="country-info__box"><img src="${svg}" alt="flag" width="30">
+      }) => `<div class="country-info__conteiner"><img src="${svg}" alt="flag" width="100">
     <h1 class="country-info__main-title">${official}</h1></div>
     <ul class="country-info__list">
     <li class="country-info__item">
      <h2 class="country-info__title">Capital:</h2>
-    <p class="country-info___text">${capital}</p>
+    <p class="country-info__text">${capital}</p>
     </li>
     <li class="country-info__item">
-        <h2 class="country-info___title">Population:</h2>
-     <p class="country-info___text">${population}</p>
+        <h2 class="country-info__title">Population:</h2>
+     <p class="country-info__text">${population}</p>
     </li>
     <li class="country-info__item">
-    <h2 class="country-info___title">Languages:</h2>
-     <p class="country-info___text">${Object.values(languages)}</p></li>
+    <h2 class="country-info__title">Languages:</h2>
+     <p class="country-info__text">${Object.values(languages)}</p></li>
     </ul>`
     )
     .join('');
